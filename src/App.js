@@ -13,6 +13,7 @@ const App = () => {
     setToDo("");
   };
   console.log(toDos);
+  console.log(toDos.map((toDo, index) => <li key={index}>{toDo}</li>));
   return (
     <div>
       <h1>My To Dos({toDos.length})</h1>
@@ -25,6 +26,12 @@ const App = () => {
         />
         <button>Add To Do</button>
       </form>
+      <hr />
+      <ul>
+        {toDos.map((toDo, index) => (
+          <li key={index}>{toDo}</li>
+        ))}
+      </ul>
     </div>
   );
 };
