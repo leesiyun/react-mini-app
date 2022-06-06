@@ -1,12 +1,17 @@
-import Potato from "./Potato";
+const Food = ({ favorite }) => {
+  return <h1>i love {favorite}</h1>;
+};
 
-function App() {
+const App = () => {
   return (
     <div>
       <h1>Hello</h1>
-      <Potato />
+      <Food favorite="kimchi" />
+      <Food favorite="ramen" />
+      <Food favorite="samgiopsal" />
+      <Food favorite="chukumi" />
     </div>
   );
-}
+};
 
 export default App;
