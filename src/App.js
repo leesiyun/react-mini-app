@@ -2,7 +2,7 @@ const Food = ({ name, picture }) => {
   return (
     <div>
       <h2>i like {name}</h2>
-      <img src={picture} art={name} />
+      <img src={picture} alt={name} />
     </div>
   );
 };
