@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" exact={true} element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/movie-detail" element={<Detail />} />
+        <Route path="/movie/:id" element={<Detail />} />
       </Routes>
     </HashRouter>
   );
