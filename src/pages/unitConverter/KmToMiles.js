@@ -1,7 +1,5 @@
-import React from "react";
-
 const KmToMiles = () => {
-  return <div>KmToMiles</div>;
+  return <div>KM 2 M</div>;
 };
 
 export default KmToMiles;

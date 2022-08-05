@@ -1,4 +1,3 @@
-import React from "react";
 import * as IoIcons from "react-icons/io";
 import * as HiIcons from "react-icons/hi";
 import * as FaIcons from "react-icons/fa";
@@ -20,12 +19,12 @@ export const SidebarDate = [
     subNav: [
       {
         title: "Minutes To Hours",
-        path: "/unit-converter/minutes-to-hours",
+        path: "/unit-converter",
         icon: <MdIcons.MdChangeCircle />,
       },
       {
         title: "Km To Miles",
-        path: "/unit-converter/km-to-miles",
+        path: "/unit-converter",
         icon: <MdIcons.MdChangeCircle />,
       },
     ],
@@ -36,8 +35,13 @@ export const SidebarDate = [
     icon: <IoIcons.IoIosListBox />,
   },
   {
-    title: "CoinTracker",
+    title: "Coin Tracker",
     path: "/coin-tracker",
+    icon: <FaIcons.FaBitcoin />,
+  },
+  {
+    title: "Movie",
+    path: "/Movie",
     icon: <FaIcons.FaBitcoin />,
   },
 ];
