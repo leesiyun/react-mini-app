@@ -3,12 +3,27 @@ import * as HiIcons from "react-icons/hi";
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
 import * as RiIcons from "react-icons/ri";
+import * as GiIcons from "react-icons/gi";
 
 export const SidebarDate = [
   {
     title: "Counter",
-    path: "/counter",
+    path: "#",
     icon: <HiIcons.HiCursorClick />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+    subNav: [
+      {
+        title: "Counter",
+        path: "/counter",
+        icon: <GiIcons.GiClick />,
+      },
+      {
+        title: "Cart Counter",
+        path: "/cart-counter",
+        icon: <FaIcons.FaShoppingCart />,
+      },
+    ],
   },
   {
     title: "Unit Converter",

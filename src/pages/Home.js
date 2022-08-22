@@ -1,18 +1,29 @@
 import styled from "styled-components";
-const Main = styled.span`
-  font-family: "Poppins", sans-serif;
-  font-size: 45px;
-  text-align: center;
-`;
-
-const OrangeMain = styled(Main)`
-  color: #f6ab00;
+const Main = styled.div`
+  padding: 0 30px;
+  line-height: 70px;
+  div {
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 45px;
+    text-align: center;
+    span {
+      font-family: "Poppins", sans-serif;
+      font-style: italic;
+      font-weight: 800;
+      color: #f6ab00;
+      padding: 0 10px 0 8px;
+    }
+  }
 `;
 
 const Home = () => {
   return (
     <Main>
-      Siyun <OrangeMain>React</OrangeMain> Mini Apps
+      <div>
+        Siyun <span>React</span> Mini Apps
+      </div>
     </Main>
   );
 };

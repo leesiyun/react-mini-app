@@ -4,7 +4,8 @@ import styled from "styled-components";
 import "./App.css";
 
 import Home from "./pages/Home";
-import Counter from "./pages/Counter";
+import Counter from "./pages/counter/Counter";
+import CartCounter from "./pages/counter/cartCounter/CartCounter";
 import UnitConverter from "./pages/unitConverter/UnitConverter";
 import TodoList from "./pages/ToDoList";
 import CoinTracker from "./pages/CoinTracker";
@@ -38,6 +39,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/counter" element={<Counter />} />
+            <Route path="/cart-counter" element={<CartCounter />} />
             <Route path="/unit-converter" element={<UnitConverter />} />
             <Route path="/to-do-list" element={<TodoList />} />
             <Route path="/coin-tracker" element={<CoinTracker />} />
