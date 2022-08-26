@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 import * as VscIcons from "react-icons/vsc";
 
@@ -46,8 +46,9 @@ const ToggleList = styled.li`
 
 const CounterToggle = ({ numbers, count, setCount, setIsShowCountList }) => {
   useEffect(() => {
+    const countListHeight = 38;
     const scroller = document.querySelector(".scroller");
-    if (scroller) scroller.scrollTo({ top: (count - 1) * 38 });
+    if (scroller) scroller.scrollTo({ top: (count - 1) * countListHeight });
   }, [count]);
 
   const handleClose = () => {

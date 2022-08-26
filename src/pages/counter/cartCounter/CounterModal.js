@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import * as VscIcons from "react-icons/vsc";
 
@@ -70,9 +71,9 @@ const ModalStyle = styled.div`
   main {
     padding: 64px 0px 50px 0;
     left: 0;
-    overflow-y: scroll;
     height: 100%;
     z-index: 101;
+    overflow-y: auto;
   }
 `;
 
@@ -95,9 +96,6 @@ const ModalListStyle = styled.li`
   color: #2c2c2c;
   background-color: ${(props) =>
     props.value === props.count ? "#f1f1f1" : "#fff"};
-  &:hover {
-    background-color: #f1f1f1;
-  }
 `;
 
 const CounterModal = ({
@@ -107,6 +105,12 @@ const CounterModal = ({
   setCount,
   handleModalClose,
 }) => {
+  useEffect(() => {
+    const countListHeight = 59;
+    const scroller = document.querySelector(".scroller");
+    if (scroller) scroller.scrollTo({ top: (count - 1) * countListHeight });
+  }, [count]);
+
   const handleClick = (e) => {
     setCount(Number(e.target.value));
     handleModalClose();
@@ -120,7 +124,7 @@ const CounterModal = ({
           <VscIcons.VscChromeClose />
         </span>
       </header>
-      <main>
+      <main className="scroller">
         <ul>
           {numbers.map((number) => (
             <ModalListStyle

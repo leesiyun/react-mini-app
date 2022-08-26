@@ -7,6 +7,7 @@ import CounterToggle from "./CounterToggle";
 
 const CartCounterStyle = styled.div`
   display: block;
+  user-select: none;
   p {
     font-size: 14px;
     text-align: center;
