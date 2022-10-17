@@ -12,6 +12,7 @@ const ToDoList = () => {
     setToDos((currentArray) => [toDo, ...currentArray]);
     setToDo("");
   };
+
   return (
     <div>
       <h1>My To Dos({toDos.length})</h1>

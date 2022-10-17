@@ -18,14 +18,12 @@ const Main = styled.div`
   }
 `;
 
-const Home = () => {
-  return (
-    <Main>
-      <div>
-        Siyun <span>React</span> Mini Apps
-      </div>
-    </Main>
-  );
-};
+const Home = () => (
+  <Main>
+    <div>
+      Siyun <span>React</span> Mini Apps
+    </div>
+  </Main>
+);
 
 export default Home;

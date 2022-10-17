@@ -1,5 +1,3 @@
-const KmToMiles = () => {
-  return <div>KM 2 M</div>;
-};
+const KmToMiles = () => <div>KM 2 M</div>;
 
 export default KmToMiles;

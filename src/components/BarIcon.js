@@ -17,14 +17,12 @@ const NavIcon = styled(Link)`
   align-items: center;
 `;
 
-const BarIcon = ({ showSidebar }) => {
-  return (
-    <Nav>
-      <NavIcon to="#" onClick={showSidebar}>
-        <FaIcons.FaBars />
-      </NavIcon>
-    </Nav>
-  );
-};
+const BarIcon = ({ showSidebar }) => (
+  <Nav>
+    <NavIcon to="#" onClick={showSidebar}>
+      <FaIcons.FaBars />
+    </NavIcon>
+  </Nav>
+);
 
 export default BarIcon;

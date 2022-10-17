@@ -35,24 +35,20 @@ const SidebarWrap = styled.div`
   height: 100vh;
 `;
 
-const Sidebar = ({ sidebar, showSidebar }) => {
-  return (
-    <SidebarNav sidebar={sidebar}>
-      <SidebarWrap>
-        <HomeIcon to="/" onClick={showSidebar}>
-          <FaIcons.FaReact />
-          <div>Siyun Mini App</div>
-        </HomeIcon>
-        <div>
-          {SidebarDate.map((item, index) => {
-            return (
-              <SubMenu item={item} key={index} showSidebar={showSidebar} />
-            );
-          })}
-        </div>
-      </SidebarWrap>
-    </SidebarNav>
-  );
-};
+const Sidebar = ({ sidebar, showSidebar }) => (
+  <SidebarNav sidebar={sidebar}>
+    <SidebarWrap>
+      <HomeIcon to="/" onClick={showSidebar}>
+        <FaIcons.FaReact />
+        <div>Siyun Mini App</div>
+      </HomeIcon>
+      <div>
+        {SidebarDate.map((item, index) => {
+          return <SubMenu item={item} key={index} showSidebar={showSidebar} />;
+        })}
+      </div>
+    </SidebarWrap>
+  </SidebarNav>
+);
 
 export default Sidebar;
