@@ -56,7 +56,12 @@ export const SidebarDate = [
   },
   {
     title: "Movie",
-    path: "/Movie",
+    path: "/movie",
     icon: <FaIcons.FaBitcoin />,
+  },
+  {
+    title: "Search",
+    path: "/search",
+    icon: <FaIcons.FaSearch />,
   },
 ];

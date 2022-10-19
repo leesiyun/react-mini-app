@@ -11,6 +11,7 @@ import TodoList from "./pages/ToDoList";
 import CoinTracker from "./pages/CoinTracker";
 import MovieHome from "./pages/movie/MovieHome";
 import MovieDetail from "./pages/movie/MovieDetail";
+import Search from "./pages/search";
 
 import Sidebar from "./components/Sidebar";
 import BarIcon from "./components/BarIcon";
@@ -45,6 +46,7 @@ const App = () => {
             <Route path="/coin-tracker" element={<CoinTracker />} />
             <Route path="/movie" element={<MovieHome />} />
             <Route path="/movie/:id" element={<MovieDetail />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </Main>
       </Container>
