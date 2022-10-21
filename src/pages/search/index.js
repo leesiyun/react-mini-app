@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Users } from "./users";
 import Table from "./Table";
 import styled from "styled-components";
+import * as FaIcons from "react-icons/fa";
 
 const Search = () => {
   const [query, setQuery] = useState("");
@@ -15,8 +16,9 @@ const Search = () => {
   const searchQuery = (e) => setQuery(e.target.value.toLowerCase());
 
   return (
-    <SearchStyle>
+    <SearchStyle className="Search">
       <div>
+        <FaIcons.FaSearch className="icon" />
         <input type="text" placeholder="Search..." onChange={searchQuery} />
       </div>
       <Table data={search(Users)} />
@@ -27,27 +29,34 @@ const Search = () => {
 export default Search;
 
 const SearchStyle = styled.div`
-  height: 90vh;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  position: relative;
-  left: 20%;
+  height: 100%;
+  margin-top: 150px;
+  color: #2c2c2c;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
   div {
-    margin-top: 200px;
+    text-align: center;
+    width: 80%;
+  }
+
+  .icon {
+    font-size: 20px;
+    margin-top: 22px;
     position: relative;
-    left: 10%;
+    left: 14%;
   }
+
   input {
-    padding: 10px 40px 10px 25px;
     font-size: 18px;
-  }
-  @media (max-width: 768px) {
-    font-size: 14px;
-    left: 8%;
-    input {
-      padding: 8px 40px 8px 25px;
-      font-size: 16px;
+    width: 80%;
+    float: right;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    padding: 20px 20px 16px 70px;
+    &:focus {
+      outline: none;
     }
   }
 `;

@@ -22,6 +22,8 @@ const Main = styled.div`
   display: flex;
   height: 90vh;
   width: 100%;
+  margin: 0;
+  padding: 0;
   align-items: center;
   justify-content: center;
   line-height: 2rem;
