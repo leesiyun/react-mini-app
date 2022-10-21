@@ -32,7 +32,6 @@ const Counter = () => {
     return () => {
       document.removeEventListener("click", handleClickListOutside);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleClickListOutside = (event) => {

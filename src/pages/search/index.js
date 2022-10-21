@@ -59,4 +59,16 @@ const SearchStyle = styled.div`
       outline: none;
     }
   }
+
+  @media (max-width: 768px) {
+    .icon {
+      font-size: 17px;
+      left: 18%;
+    }
+
+    input {
+      font-size: 15px;
+      padding: 20px 20px 10px 60px;
+    }
+  }
 `;

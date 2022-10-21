@@ -26,6 +26,11 @@ export const SidebarDate = [
     ],
   },
   {
+    title: "Search",
+    path: "/search",
+    icon: <FaIcons.FaSearch />,
+  },
+  {
     title: "Unit Converter",
     path: "#",
     icon: <MdIcons.MdChangeCircle />,
@@ -58,10 +63,5 @@ export const SidebarDate = [
     title: "Movie",
     path: "/movie",
     icon: <FaIcons.FaBitcoin />,
-  },
-  {
-    title: "Search",
-    path: "/search",
-    icon: <FaIcons.FaSearch />,
   },
 ];
