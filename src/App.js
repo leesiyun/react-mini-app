@@ -13,7 +13,7 @@ import MovieHome from "./pages/movie/MovieHome";
 import MovieDetail from "./pages/movie/MovieDetail";
 import Search from "./pages/search";
 
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/sidebar";
 import BarIcon from "./components/BarIcon";
 
 const Container = styled.div``;

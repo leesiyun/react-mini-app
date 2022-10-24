@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { SidebarDate } from "./SidebarDate";
 import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
-import SubMenu from "./SubMenu";
+import Menu from "./Menu";
 
 const HomeIcon = styled(Link)`
   margin: 0 2rem 0 1rem;
@@ -42,11 +41,7 @@ const Sidebar = ({ sidebar, showSidebar }) => (
         <FaIcons.FaReact />
         <div>Siyun Mini App</div>
       </HomeIcon>
-      <div>
-        {SidebarDate.map((item, index) => {
-          return <SubMenu item={item} key={index} showSidebar={showSidebar} />;
-        })}
-      </div>
+      <Menu showSidebar={showSidebar} />
     </SidebarWrap>
   </SidebarNav>
 );

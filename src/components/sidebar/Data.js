@@ -5,7 +5,7 @@ import * as MdIcons from "react-icons/md";
 import * as RiIcons from "react-icons/ri";
 import * as GiIcons from "react-icons/gi";
 
-export const SidebarDate = [
+export const Data = [
   {
     title: "Counter",
     path: "#",
