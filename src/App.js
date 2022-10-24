@@ -30,7 +30,7 @@ const Main = styled.div`
 `;
 
 const App = () => {
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = useState(true);
 
   const showSidebar = () => setSidebar((current) => !current);
   return (
