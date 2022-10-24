@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Data } from "./Data";
 import SubMenu from "./SubMenu";
 
-const SidbarMenu = styled.div`
+const MenuStyle = styled.div`
   .menuLink {
     display: flex;
     align-items: center;
@@ -29,50 +29,37 @@ const SidbarMenu = styled.div`
 `;
 
 const Menu = ({ showSidebar }) => {
-  const [toggle, setToggle] = useState(false);
   const [toggleTitle, setToggleTitle] = useState("");
 
-  const showSubMenu = (e) => {
-    setToggleTitle(e.target.innerText);
-    setToggle((current) => !current);
-    console.log(toggleTitle, e.target.innerText, toggle);
+  const showSubMenu = ({ target: { innerText } }) => {
+    setToggleTitle(toggleTitle === innerText ? "" : innerText);
   };
 
-  return (
-    <>
-      {Data.map((item, index) => {
-        return (
-          <SidbarMenu key={index}>
-            <Link
-              className="menuLink"
-              to={item.path && item.path}
-              onClick={item.subNav ? showSubMenu : showSidebar}
-            >
-              <div>
-                {item.icon}
-                <span>{item.title}</span>
-              </div>
-              <div>
-                {item.subNav && toggle
-                  ? item.iconOpened
-                  : item.subNav
-                  ? item.iconClosed
-                  : null}
-              </div>
-            </Link>
-            {toggle && (
-              <SubMenu
-                item={item}
-                showSidebar={showSidebar}
-                toggleTitle={toggleTitle}
-                toggle={toggle}
-              />
-            )}
-          </SidbarMenu>
-        );
-      })}
-    </>
-  );
+  const renderIcon = (item) => {
+    if (!item.subNav) return null;
+    return toggleTitle === item.title ? item.iconOpened : item.iconClosed;
+  };
+
+  return Data.map((item, index) => {
+    return (
+      <MenuStyle key={index}>
+        <Link
+          className="menuLink"
+          to={item.path}
+          onClick={item.subNav ? showSubMenu : showSidebar}
+        >
+          <div>
+            {item.icon}
+            <span>{item.title}</span>
+          </div>
+          {renderIcon(item)}
+        </Link>
+        {toggleTitle === item.title && (
+          <SubMenu item={item} showSidebar={showSidebar} />
+        )}
+      </MenuStyle>
+    );
+  });
 };
 
 export default Menu;

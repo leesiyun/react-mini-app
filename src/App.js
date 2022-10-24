@@ -11,9 +11,9 @@ import TodoList from "./pages/ToDoList";
 import CoinTracker from "./pages/CoinTracker";
 import MovieHome from "./pages/movie/MovieHome";
 import MovieDetail from "./pages/movie/MovieDetail";
-import Search from "./pages/search";
+import Search from "./pages/search/Search";
 
-import Sidebar from "./components/sidebar";
+import Sidebar from "./components/sidebar/Sidebar";
 import BarIcon from "./components/BarIcon";
 
 const Container = styled.div``;

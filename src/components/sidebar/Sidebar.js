@@ -17,7 +17,7 @@ const HomeIcon = styled(Link)`
   }
 `;
 
-const SidebarNav = styled.nav`
+const SidebarStyle = styled.nav`
   background: #15171c;
   width: 250px;
   display: flex;
@@ -35,7 +35,7 @@ const SidebarWrap = styled.div`
 `;
 
 const Sidebar = ({ sidebar, showSidebar }) => (
-  <SidebarNav sidebar={sidebar}>
+  <SidebarStyle sidebar={sidebar}>
     <SidebarWrap>
       <HomeIcon to="/" onClick={showSidebar}>
         <FaIcons.FaReact />
@@ -43,7 +43,7 @@ const Sidebar = ({ sidebar, showSidebar }) => (
       </HomeIcon>
       <Menu showSidebar={showSidebar} />
     </SidebarWrap>
-  </SidebarNav>
+  </SidebarStyle>
 );
 
 export default Sidebar;

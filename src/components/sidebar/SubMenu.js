@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const SubMenuLink = styled(Link)`
+const SubMenuStyle = styled(Link)`
+  display: flex;
   align-items: center;
   text-decoration: none;
   height: 60px;
@@ -9,32 +10,18 @@ const SubMenuLink = styled(Link)`
   background: #414757;
   padding-left: 2rem;
   color: #f5f5f5;
-  display: ${({ show }) => (show ? "flex" : "none")};
   &:hover {
     cursor: pointer;
     background: #c78b04;
   }
 `;
 
-const SubMenu = ({ item, showSidebar, toggleTitle, toggle }) => {
-  const showContent = item.title === toggleTitle && toggle;
-  return (
-    <>
-      {item.subNav?.map((item, index) => {
-        return (
-          <SubMenuLink
-            to={item.path}
-            key={index}
-            onClick={showSidebar}
-            show={showContent ? 1 : 0}
-            //show="1"
-          >
-            {item.icon}
-            <span>{item.title}</span>
-          </SubMenuLink>
-        );
-      })}
-    </>
-  );
-};
+const SubMenu = ({ item, showSidebar }) =>
+  item.subNav?.map((item, index) => (
+    <SubMenuStyle to={item.path} key={index} onClick={showSidebar}>
+      {item.icon}
+      <span>{item.title}</span>
+    </SubMenuStyle>
+  ));
+
 export default SubMenu;
