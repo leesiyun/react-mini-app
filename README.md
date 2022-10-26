@@ -1,6 +1,6 @@
 # Cart Counter
 
-## Set the non-display area where you cannot choose
+## Disable the button for parts that cannot be selected
 
 ![cart-counter-ux1](https://user-images.githubusercontent.com/47590181/186339794-b479a76a-8310-4816-9040-0b0fd443db29.gif)
 
