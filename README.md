@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Cart Counter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## PC
 
-## Available Scripts
+![cart-counter-ux1](https://user-images.githubusercontent.com/47590181/186339794-b479a76a-8310-4816-9040-0b0fd443db29.gif)
 
-In the project directory, you can run:
+![cart-counter-ux2](https://user-images.githubusercontent.com/47590181/186373536-170c1552-87a3-45c1-995a-e5974a6dfd35.gif)
 
-### `npm start`
+![cart-counter-4](https://user-images.githubusercontent.com/47590181/186548332-142755a4-a3cc-4642-bb61-1d8deab4470a.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Mobile
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![cart-counter-3](https://user-images.githubusercontent.com/47590181/186547229-2719ec00-b961-420f-ac9b-392cd0cfae93.gif)
 
-### `npm test`
+# Search
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## PC
 
-### `npm run build`
+![react-table-pc-css](https://user-images.githubusercontent.com/47590181/197099971-3df7d654-a63c-4651-8184-268412f04d8b.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Mobile
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![react-table-mobile-css](https://user-images.githubusercontent.com/47590181/197162550-bb7eb084-6ec6-4dc0-be64-06bcd2d2d4a6.gif)
