@@ -26,7 +26,7 @@ const SidebarStyle = styled.nav`
   top: 0;
   left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
   transition: 400ms;
-  z-index: 10;
+  z-index: 1001;
 `;
 
 const SidebarWrap = styled.div`

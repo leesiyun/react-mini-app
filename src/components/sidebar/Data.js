@@ -62,6 +62,6 @@ export const Data = [
   {
     title: "Movie",
     path: "/movie",
-    icon: <FaIcons.FaBitcoin />,
+    icon: <MdIcons.MdLocalMovies />,
   },
 ];

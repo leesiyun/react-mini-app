@@ -23,6 +23,12 @@ const MenuStyle = styled.div`
     }
   }
 
+  .icon {
+    position: relative;
+    top: 2px;
+    margin-left: 0px;
+  }
+
   span {
     margin-left: 16px;
   }
@@ -49,7 +55,8 @@ const Menu = ({ showSidebar }) => {
           onClick={item.subNav ? showSubMenu : showSidebar}
         >
           <div>
-            {item.icon}
+            <span className="icon"> {item.icon}</span>
+
             <span>{item.title}</span>
           </div>
           {renderIcon(item)}
