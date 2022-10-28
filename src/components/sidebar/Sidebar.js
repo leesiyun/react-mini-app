@@ -25,7 +25,7 @@ const SidebarStyle = styled.nav`
   position: fixed;
   top: 0;
   left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
-  transition: 400ms;
+  transition: 150ms;
   z-index: 1001;
 `;
 

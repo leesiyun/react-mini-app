@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 import styled from "styled-components";
 import "./App.css";
 
@@ -24,6 +25,10 @@ const Main = styled.div`
   width: 100%;
   margin: 0;
   padding: 0;
+  padding-left: ${({ isMobile, sidebar }) =>
+    !isMobile && sidebar ? "250px" : "0"};
+  transition: ${({ isMobile, sidebar }) =>
+    !isMobile && sidebar ? "100ms" : "0"};
   align-items: center;
   justify-content: center;
   line-height: 2rem;
@@ -31,14 +36,14 @@ const Main = styled.div`
 
 const App = () => {
   const [sidebar, setSidebar] = useState(true);
-
   const showSidebar = () => setSidebar((current) => !current);
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Sidebar sidebar={sidebar} showSidebar={showSidebar} />
       <Container onClick={sidebar ? showSidebar : null}>
         <BarIcon showSidebar={showSidebar} />
-        <Main>
+        <Main isMobile={isMobile} sidebar={sidebar}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/counter" element={<Counter />} />
