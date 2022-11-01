@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Counter from "./pages/counter/Counter";
 import CartCounter from "./pages/counter/cartCounter/CartCounter";
 import UnitConverter from "./pages/unitConverter/UnitConverter";
-import TodoList from "./pages/ToDoList";
+import TodoList from "./pages/toDoList/ToDoList";
 import CoinTracker from "./pages/CoinTracker";
 import MovieHome from "./pages/movie/MovieHome";
 import MovieDetail from "./pages/movie/MovieDetail";
