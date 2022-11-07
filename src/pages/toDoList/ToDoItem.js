@@ -17,6 +17,10 @@ const ToDoItemStyle = styled.div`
     margin-left: 10px;
     visibility: hidden;
   }
+
+  @media (max-width: 1000px) {
+    font-size: 15px;
+  }
 `;
 
 const ToDoItem = ({ toDo: { id, text, completed }, showEdit, deleteToDo }) => {

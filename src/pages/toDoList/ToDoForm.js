@@ -5,7 +5,7 @@ import * as FiIcons from "react-icons/fi";
 const ToDoFormStyle = styled.form`
   margin-bottom: 20px;
   input {
-    width: 88%;
+    width: 85%;
     padding: 10px 23px;
     border-radius: 30px;
     border: 2px solid #dddddd;
@@ -17,8 +17,18 @@ const ToDoFormStyle = styled.form`
     background-color: #fff;
     vertical-align: middle;
     color: #f6ab00;
-    margin: 3px 0 0 20px;
+    margin: 3px 0 0 15px;
     font-size: 45px;
+  }
+
+  @media (max-width: 1000px) {
+    input {
+      width: 83%;
+      font-size: 15px;
+    }
+    button {
+      font-size: 35px;
+    }
   }
 `;
 

@@ -11,8 +11,9 @@ const ToDoListStyle = styled.div`
   height: 85%;
   @media (max-width: 768px) {
     margin-top: 150px;
-    width: 100%;
+    width: 90%;
     height: 100%;
+    margin: 200px 30px 0 30px;
   }
   .remainTasks {
     color: #f6ab00;
