@@ -1,4 +1,9 @@
+import styled from "styled-components";
 import ToDoItemTemplate from "./ToDoItemTemplate";
+
+const ToDoItemListStyle = styled.ul`
+  margin-top: 30px;
+`;
 
 const ToDoItemList = ({
   toDos,
@@ -7,7 +12,7 @@ const ToDoItemList = ({
   deleteToDo,
 }) => {
   return (
-    <ul>
+    <ToDoItemListStyle>
       {toDos.map((toDo) => (
         <ToDoItemTemplate
           toDo={toDo}
@@ -17,7 +22,7 @@ const ToDoItemList = ({
           deleteToDo={deleteToDo}
         />
       ))}
-    </ul>
+    </ToDoItemListStyle>
   );
 };
 

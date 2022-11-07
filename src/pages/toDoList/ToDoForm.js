@@ -1,4 +1,26 @@
 import { useState, useRef } from "react";
+import styled from "styled-components";
+import * as FiIcons from "react-icons/fi";
+
+const ToDoFormStyle = styled.form`
+  margin-bottom: 20px;
+  input {
+    width: 88%;
+    padding: 10px 23px;
+    border-radius: 30px;
+    border: 2px solid #dddddd;
+    font-size: 18px;
+  }
+
+  button {
+    border: none;
+    background-color: #fff;
+    vertical-align: middle;
+    color: #f6ab00;
+    margin: 3px 0 0 20px;
+    font-size: 45px;
+  }
+`;
 
 const ToDoForm = ({ addToDo }) => {
   const [inputText, setInputText] = useState("");
@@ -25,15 +47,17 @@ const ToDoForm = ({ addToDo }) => {
   const handleChange = (e) => setInputText(e.target.value);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <ToDoFormStyle onSubmit={handleSubmit}>
       <input
         type="text"
         onChange={handleChange}
         value={inputText}
         placeholder="Write your to do..."
       />
-      <button>Add</button>
-    </form>
+      <button>
+        <FiIcons.FiPlusCircle className="icon" />
+      </button>
+    </ToDoFormStyle>
   );
 };
 
