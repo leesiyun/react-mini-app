@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import * as FaIcons from "react-icons/fa";
+import * as GoIcons from "react-icons/go";
 
 const NavStyle = styled.div`
   top: 0;
@@ -8,9 +8,9 @@ const NavStyle = styled.div`
   z-index: 1000;
 
   .navLink {
-    margin-left: 25px;
+    margin: 4px 0 0 25px;
     color: #15171c;
-    font-size: 2rem;
+    font-size: 40px;
     height: 80px;
     display: flex;
     justify-content: flex-start;
@@ -21,7 +21,7 @@ const NavStyle = styled.div`
 const BarIcon = ({ showSidebar }) => (
   <NavStyle>
     <Link to="#" className="navLink" onClick={showSidebar}>
-      <FaIcons.FaBars />
+      <GoIcons.GoThreeBars className="icon" />
     </Link>
   </NavStyle>
 );

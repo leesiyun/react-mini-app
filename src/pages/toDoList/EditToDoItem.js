@@ -29,7 +29,7 @@ const EditToDoItemStyle = styled.div`
     visibility: hidden;
   }
 
-  @media (max-width: 1250px) {
+  @media (max-width: 1417px) {
     width: 80%;
     input {
       font-size: 15px;

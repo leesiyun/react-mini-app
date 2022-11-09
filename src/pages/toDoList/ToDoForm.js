@@ -21,7 +21,7 @@ const ToDoFormStyle = styled.form`
     font-size: 45px;
   }
 
-  @media (max-width: 1250px) {
+  @media (max-width: 1417px) {
     margin: 0 0 20px 0;
     input {
       width: 85%;
@@ -51,8 +51,8 @@ const ToDoForm = ({ addToDo }) => {
   };
 
   const handleSubmit = (e) => {
-    if (inputText) return;
     e.preventDefault();
+    if (!inputText) return;
     handleInsert(inputText);
     setInputText("");
   };

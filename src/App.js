@@ -40,8 +40,12 @@ const App = () => {
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <Sidebar sidebar={sidebar} showSidebar={showSidebar} />
-      <Container onClick={sidebar ? showSidebar : null}>
+      <Sidebar
+        sidebar={sidebar}
+        showSidebar={showSidebar}
+        isMobile={isMobile}
+      />
+      <Container onClick={sidebar && isMobile ? showSidebar : null}>
         <BarIcon showSidebar={showSidebar} />
         <Main isMobile={isMobile} sidebar={sidebar}>
           <Routes>

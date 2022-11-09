@@ -34,7 +34,7 @@ const MenuStyle = styled.div`
   }
 `;
 
-const Menu = ({ showSidebar }) => {
+const Menu = ({ showSidebar, isMobile }) => {
   const [toggleTitle, setToggleTitle] = useState("");
 
   const showSubMenu = ({ target: { innerText } }) => {
@@ -46,13 +46,17 @@ const Menu = ({ showSidebar }) => {
     return toggleTitle === item.title ? item.iconOpened : item.iconClosed;
   };
 
+  const moblieCheckAndShowSidebar = () => {
+    if (isMobile) showSidebar();
+  };
+
   return Data.map((item, index) => {
     return (
       <MenuStyle key={index}>
         <Link
           className="menuLink"
           to={item.path}
-          onClick={item.subNav ? showSubMenu : showSidebar}
+          onClick={item.subNav ? showSubMenu : moblieCheckAndShowSidebar}
         >
           <div>
             <span className="icon"> {item.icon}</span>
@@ -62,7 +66,7 @@ const Menu = ({ showSidebar }) => {
           {renderIcon(item)}
         </Link>
         {toggleTitle === item.title && (
-          <SubMenu item={item} showSidebar={showSidebar} />
+          <SubMenu item={item} showSidebar={showSidebar} isMobile={isMobile} />
         )}
       </MenuStyle>
     );

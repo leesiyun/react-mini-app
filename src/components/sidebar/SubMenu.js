@@ -16,9 +16,9 @@ const SubMenuStyle = styled(Link)`
   }
 `;
 
-const SubMenu = ({ item, showSidebar }) =>
+const SubMenu = ({ item, showSidebar, isMobile }) =>
   item.subNav?.map((item, index) => (
-    <SubMenuStyle to={item.path} key={index} onClick={showSidebar}>
+    <SubMenuStyle to={item.path} key={index} onClick={isMobile && showSidebar}>
       {item.icon}
       <span>{item.title}</span>
     </SubMenuStyle>

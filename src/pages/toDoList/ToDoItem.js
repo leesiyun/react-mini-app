@@ -19,7 +19,7 @@ const ToDoItemStyle = styled.div`
     text-align: right;
   }
 
-  @media (max-width: 1250px) {
+  @media (max-width: 1417px) {
     font-size: 15px;
     width: 80%;
   }
