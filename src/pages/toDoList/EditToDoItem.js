@@ -5,21 +5,20 @@ import * as MdIcons from "react-icons/md";
 const EditToDoItemStyle = styled.div`
   display: flex;
   font-size: 20px;
-  width: 80%;
+  width: 88%;
   justify-content: space-between;
   vertical-align: middle;
-
   input {
     position: relative;
-    bottom: 4px;
+    bottom: 6.5px;
     border: none;
     width: 80%;
-    font-size: 20px;
+    font-size: 18px;
+    vertical-align: middle;
     &:focus {
       outline: none;
     }
   }
-
   button {
     border: none;
     background-color: #fff;
@@ -28,6 +27,14 @@ const EditToDoItemStyle = styled.div`
     font-size: 24px;
     margin-left: 10px;
     visibility: hidden;
+  }
+
+  @media (max-width: 1250px) {
+    width: 80%;
+    input {
+      font-size: 15px;
+      width: 73%;
+    }
   }
 `;
 

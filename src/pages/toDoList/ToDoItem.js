@@ -4,7 +4,7 @@ import * as MdIcons from "react-icons/md";
 const ToDoItemStyle = styled.div`
   display: flex;
   font-size: 18px;
-  width: 80%;
+  width: 88%;
   justify-content: space-between;
   vertical-align: middle;
 
@@ -16,10 +16,12 @@ const ToDoItemStyle = styled.div`
     font-size: 24px;
     margin-left: 10px;
     visibility: hidden;
+    text-align: right;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     font-size: 15px;
+    width: 80%;
   }
 `;
 

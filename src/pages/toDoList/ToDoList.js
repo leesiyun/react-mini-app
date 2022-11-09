@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ToDoTitle from "./ToDoTitle";
 import ToDoForm from "./ToDoForm";
 import ToDoFilter from "./ToDoFilter";
+import Progressbar from "./Progressbar";
 import ToDoItemList from "./ToDoItemList";
 
 const ToDoListStyle = styled.div`
@@ -13,13 +14,15 @@ const ToDoListStyle = styled.div`
     margin-top: 150px;
     width: 90%;
     height: 100%;
-    margin: 200px 30px 0 30px;
+    margin: 200px 20px 0 20px;
   }
   .remainTasks {
     color: #f6ab00;
     width: 100%;
     padding-bottom: 15px;
     border-bottom: 1px solid #dddddd;
+    text-align: right;
+    margin-top: 10px;
   }
 `;
 
@@ -32,13 +35,14 @@ const ToDoList = () => {
     setFilterToDos(toDos);
     setFilterState("all");
   };
-  const remainingToDos = toDos.filter((toDo) => toDo.completed === false);
+
   const filterActive = () => {
-    setFilterToDos(remainingToDos);
+    setFilterToDos(toDos.filter((toDo) => toDo.completed === false));
     setFilterState("active");
   };
+  const remainingToDos = toDos.filter((toDo) => toDo.completed === true);
   const filterCompleted = () => {
-    setFilterToDos(toDos.filter((toDo) => toDo.completed === true));
+    setFilterToDos(remainingToDos);
     setFilterState("completed");
   };
 
@@ -68,6 +72,9 @@ const ToDoList = () => {
 
   const deleteToDo = (id) => setToDos(toDos.filter((toDo) => toDo.id !== id));
 
+  const filledPercentage =
+    (remainingToDos.length / toDos.length).toFixed(2) * 100;
+
   return (
     <ToDoListStyle>
       <div className="toDoListMain">
@@ -78,8 +85,9 @@ const ToDoList = () => {
           onClickActive={filterActive}
           onClickCompleted={filterCompleted}
         />
+        <Progressbar filledPercentage={filledPercentage} />
         <div className="remainTasks">
-          {remainingToDos.length} tasks remaining
+          {remainingToDos.length} out of {toDos.length} completed
         </div>
         <ToDoItemList
           toDos={filterToDos}

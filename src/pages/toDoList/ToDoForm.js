@@ -3,9 +3,9 @@ import styled from "styled-components";
 import * as FiIcons from "react-icons/fi";
 
 const ToDoFormStyle = styled.form`
-  margin-bottom: 20px;
+  margin: 0 0 20px 5px;
   input {
-    width: 85%;
+    width: 87%;
     padding: 10px 23px;
     border-radius: 30px;
     border: 2px solid #dddddd;
@@ -21,13 +21,16 @@ const ToDoFormStyle = styled.form`
     font-size: 45px;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
+    margin: 0 0 20px 0;
     input {
-      width: 83%;
+      width: 85%;
+      padding: 8px 20px;
       font-size: 15px;
     }
     button {
       font-size: 35px;
+      margin: 3px 0 0 10px;
     }
   }
 `;
@@ -48,7 +51,7 @@ const ToDoForm = ({ addToDo }) => {
   };
 
   const handleSubmit = (e) => {
-    if (!inputText) return;
+    if (inputText) return;
     e.preventDefault();
     handleInsert(inputText);
     setInputText("");
