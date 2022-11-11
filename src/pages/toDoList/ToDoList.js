@@ -10,7 +10,7 @@ const ToDoListStyle = styled.div`
   margin-top: 130px;
   width: 40%;
   height: 85%;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     margin-top: 150px;
     width: 90%;
     height: 100%;

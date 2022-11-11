@@ -10,6 +10,10 @@ const ToDoFormStyle = styled.form`
     border-radius: 30px;
     border: 2px solid #dddddd;
     font-size: 18px;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px 0 #015fcc;
+    }
   }
 
   button {

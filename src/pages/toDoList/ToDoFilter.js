@@ -23,6 +23,9 @@ const ToDoFilterStyle = styled.div`
       background-color: #daedda;
       color: #1d3829;
     }
+    &:focus {
+      box-shadow: 0 0 5px 0 #015fcc;
+    }
   }
 `;
 
