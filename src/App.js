@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 import styled from "styled-components";
 import "./App.css";
@@ -39,7 +39,7 @@ const App = () => {
   const showSidebar = () => setSidebar((current) => !current);
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename="/">
       <Sidebar
         sidebar={sidebar}
         showSidebar={showSidebar}
