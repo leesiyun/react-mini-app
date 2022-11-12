@@ -39,10 +39,10 @@ const ToDoFormStyle = styled.form`
   }
 `;
 
-const ToDoForm = ({ addToDo }) => {
+const ToDoForm = ({ toDos, addToDo }) => {
   const [inputText, setInputText] = useState("");
 
-  const nextId = useRef(1);
+  const nextId = useRef(toDos.length !== 0 ? toDos.slice(-1)[0].id + 1 : 0);
 
   const handleInsert = (text) => {
     const toDo = {

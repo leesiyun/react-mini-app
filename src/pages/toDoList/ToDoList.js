@@ -27,7 +27,9 @@ const ToDoListStyle = styled.div`
 `;
 
 const ToDoList = () => {
-  const [toDos, setToDos] = useState([]);
+  const [toDos, setToDos] = useState(
+    () => JSON.parse(localStorage.getItem("toDos")) || []
+  );
   const [filterToDos, setFilterToDos] = useState(toDos);
   const [filterState, setFilterState] = useState("all");
 
@@ -47,6 +49,7 @@ const ToDoList = () => {
   };
 
   useEffect(() => {
+    localStorage.setItem("toDos", JSON.stringify(toDos));
     if (filterState === "all") filterAll();
     if (filterState === "active") filterActive();
     if (filterState === "completed") filterCompleted();
@@ -79,7 +82,7 @@ const ToDoList = () => {
     <ToDoListStyle>
       <div className="toDoListMain">
         <ToDoTitle>My To Dos</ToDoTitle>
-        <ToDoForm addToDo={addToDo} />
+        <ToDoForm toDos={toDos} addToDo={addToDo} />
         <ToDoFilter
           onClickAll={filterAll}
           onClickActive={filterActive}
