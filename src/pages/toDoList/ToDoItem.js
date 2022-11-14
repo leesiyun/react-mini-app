@@ -3,10 +3,14 @@ import * as MdIcons from "react-icons/md";
 
 const ToDoItemStyle = styled.div`
   display: flex;
-  font-size: 18px;
-  width: 88%;
+  font-size: 15px;
+  width: 100%;
   justify-content: space-between;
   vertical-align: middle;
+
+  label {
+    flex-basis: 85%;
+  }
 
   button {
     border: none;
@@ -14,14 +18,16 @@ const ToDoItemStyle = styled.div`
     vertical-align: middle;
     color: #f6ab00;
     font-size: 24px;
-    margin-left: 10px;
+    margin-right: 15px;
     visibility: hidden;
     text-align: right;
+    flex-basis: 5%;
   }
 
-  @media (max-width: 1417px) {
-    font-size: 15px;
-    width: 80%;
+  @media (max-width: 650px) {
+    label {
+      flex-basis: 70%;
+    }
   }
 `;
 

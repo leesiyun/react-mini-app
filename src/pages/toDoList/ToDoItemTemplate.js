@@ -18,8 +18,8 @@ const ToDoItemStyle = styled.li`
 
   .checkIcon {
     position: relative;
-    right: 30px;
-    bottom: 6px;
+    left: 5px;
+    bottom: 40px;
     font-size: 24px;
     color: #f6ab00;
   }
@@ -32,7 +32,7 @@ const ToDoItemStyle = styled.li`
     border: 2px solid #dddddd;
     appearance: none;
     outline: none;
-    margin-right: 24px;
+    margin-right: 20px;
     cursor: pointer;
 
     &:checked {
@@ -48,6 +48,8 @@ const ToDoItemTemplate = ({
   updateToDoText,
   deleteToDo,
 }) => {
+  const [isEditing, setEditing] = useState(false);
+
   const handleChecked = (e) => {
     const updatedToDo = {
       id: toDo.id,
@@ -56,8 +58,6 @@ const ToDoItemTemplate = ({
     };
     updateToDoCheckbox(updatedToDo);
   };
-
-  const [isEditing, setEditing] = useState(false);
 
   const showEdit = () => setEditing((current) => !current);
 

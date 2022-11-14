@@ -1,15 +1,19 @@
 import { useState, useRef } from "react";
 import styled from "styled-components";
-import * as FiIcons from "react-icons/fi";
+import * as CgIcons from "react-icons/cg";
 
 const ToDoFormStyle = styled.form`
-  margin: 0 0 20px 5px;
+  margin: 0 0 25px 0;
+  width: 100%;
+  display: flex;
   input {
-    width: 87%;
-    padding: 10px 23px;
-    border-radius: 30px;
+    position: relative;
+    flex-basis: 95%;
+    padding: 13px 23px;
+    margin-right: 3px;
+    font-size: 15px;
     border: 2px solid #dddddd;
-    font-size: 18px;
+    border-radius: 10px;
     &:focus {
       outline: none;
       box-shadow: 0 0 5px 0 #015fcc;
@@ -18,23 +22,16 @@ const ToDoFormStyle = styled.form`
 
   button {
     border: none;
-    background-color: #fff;
+    background-color: #f6ab00;
     vertical-align: middle;
-    color: #f6ab00;
-    margin: 3px 0 0 15px;
-    font-size: 45px;
-  }
-
-  @media (max-width: 1417px) {
-    margin: 0 0 20px 0;
-    input {
-      width: 85%;
-      padding: 8px 20px;
-      font-size: 15px;
-    }
-    button {
-      font-size: 35px;
-      margin: 3px 0 0 10px;
+    flex-basis: 5%;
+    color: #fff;
+    padding: 8px 13px 0 17px;
+    font-size: 30px;
+    border: 2px solid #f6ab00;
+    border-radius: 10px;
+    &:active {
+      box-shadow: 0 0 5px 0 #015fcc;
     }
   }
 `;
@@ -72,7 +69,7 @@ const ToDoForm = ({ toDos, addToDo }) => {
         placeholder="Write your to do..."
       />
       <button>
-        <FiIcons.FiPlusCircle className="icon" />
+        <CgIcons.CgPlayListAdd className="icon" />
       </button>
     </ToDoFormStyle>
   );

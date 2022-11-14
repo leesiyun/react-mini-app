@@ -4,16 +4,16 @@ import * as MdIcons from "react-icons/md";
 
 const EditToDoItemStyle = styled.div`
   display: flex;
-  font-size: 20px;
-  width: 88%;
+  font-size: 15px;
+  width: 100%;
   justify-content: space-between;
   vertical-align: middle;
   input {
     position: relative;
     bottom: 6.5px;
     border: none;
-    width: 80%;
-    font-size: 18px;
+    flex-basis: 85%;
+    font-size: 15px;
     vertical-align: middle;
     &:focus {
       outline: none;
@@ -25,15 +25,14 @@ const EditToDoItemStyle = styled.div`
     vertical-align: middle;
     color: #f6ab00;
     font-size: 24px;
-    margin-left: 10px;
+    margin-right: 14px;
     visibility: hidden;
+    flex-basis: 5%;
   }
 
-  @media (max-width: 1417px) {
-    width: 80%;
+  @media (max-width: 650px) {
     input {
-      font-size: 15px;
-      width: 73%;
+      flex-basis: 70%;
     }
   }
 `;
