@@ -42,5 +42,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://leesiyun.github.io/react-mini-app/"
+  "homepage": "https://leesiyun.github.io/react-mini-app/",
+  "devDependencies": {
+    "prettier": "2.7.1"
+  }
 }

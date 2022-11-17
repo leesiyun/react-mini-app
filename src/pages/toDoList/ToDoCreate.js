@@ -1,7 +1,7 @@
-import { useState } from "react";
-import ToDoForm from "./ToDoForm";
-import styled from "styled-components";
-import * as MdIcons from "react-icons/md";
+import {useState} from 'react'
+import styled from 'styled-components'
+import * as MdIcons from 'react-icons/md'
+import ToDoForm from './ToDoForm'
 
 const ToDoCreateStyle = styled.div`
   .container {
@@ -16,7 +16,7 @@ const ToDoCreateStyle = styled.div`
   }
 
   .createButton {
-    background: ${({ open }) => (open ? "#ff6b6b" : "#f6ab00")};
+    background: ${({open}) => (open ? '#ff6b6b' : '#f6ab00')};
     position: relative;
     bottom: 8px;
     right: 0.5%;
@@ -32,19 +32,21 @@ const ToDoCreateStyle = styled.div`
     align-items: center;
     justify-content: center;
     transition: 0.125s all ease-in;
-    transform: ${({ open }) => open && "rotate(45deg)"};
+    transform: ${({open}) => open && 'rotate(45deg)'};
     &:hover {
-      background: ${({ open }) => (open ? "#ff6b6b" : "#f89b10")};
+      background: ${({open}) => (open ? '#ff6b6b' : '#f89b10')};
     }
     &:active {
       background: #fa5252;
     }
   }
-`;
+`
 
-const ToDoCreate = ({ toDos, addToDo }) => {
-  const [open, setOpen] = useState(false);
-  const handleToggle = () => setOpen((current) => !current);
+const ToDoCreate = ({toDos, addToDo}) => {
+  const [open, setOpen] = useState(false)
+
+  const handleToggle = () => setOpen(current => !current)
+
   return (
     <ToDoCreateStyle open={open}>
       <div className="container">
@@ -55,7 +57,7 @@ const ToDoCreate = ({ toDos, addToDo }) => {
       </div>
       {open && <ToDoForm toDos={toDos} addToDo={addToDo} />}
     </ToDoCreateStyle>
-  );
-};
+  )
+}
 
-export default ToDoCreate;
+export default ToDoCreate

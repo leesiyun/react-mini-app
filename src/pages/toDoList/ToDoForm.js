@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
-import styled from "styled-components";
-import * as CgIcons from "react-icons/cg";
+import {useState, useRef} from 'react'
+import styled from 'styled-components'
+import * as CgIcons from 'react-icons/cg'
 
 const ToDoFormStyle = styled.form`
   margin: 0 0 25px 0;
@@ -34,31 +34,35 @@ const ToDoFormStyle = styled.form`
       box-shadow: 0 0 5px 0 #015fcc;
     }
   }
-`;
+`
 
-const ToDoForm = ({ toDos, addToDo }) => {
-  const [inputText, setInputText] = useState("");
+const ToDoForm = ({toDos, addToDo}) => {
+  const [inputText, setInputText] = useState('')
 
-  const nextId = useRef(toDos.length !== 0 ? toDos.slice(-1)[0].id + 1 : 0);
+  const lastToDos = toDos.slice(-1)[0]
 
-  const handleInsert = (text) => {
+  const defaultId = toDos.length > 0 ? lastToDos.id++ : 0
+
+  const nextId = useRef(defaultId)
+
+  const handleInsert = text => {
     const toDo = {
       id: nextId.current,
       text,
       completed: false,
-    };
-    addToDo(toDo);
-    nextId.current++;
-  };
+    }
+    addToDo(toDo)
+    nextId.current++
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!inputText) return;
-    handleInsert(inputText);
-    setInputText("");
-  };
+  const handleSubmit = e => {
+    e.preventDefault()
+    if (!inputText) return
+    handleInsert(inputText)
+    setInputText('')
+  }
 
-  const handleChange = (e) => setInputText(e.target.value);
+  const handleChange = e => setInputText(e.target.value)
 
   return (
     <ToDoFormStyle onSubmit={handleSubmit}>
@@ -72,7 +76,7 @@ const ToDoForm = ({ toDos, addToDo }) => {
         <CgIcons.CgPlayListAdd className="icon" />
       </button>
     </ToDoFormStyle>
-  );
-};
+  )
+}
 
-export default ToDoForm;
+export default ToDoForm

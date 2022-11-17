@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
-import * as MdIcons from "react-icons/md";
+import {useState, useEffect, useRef} from 'react'
+import styled from 'styled-components'
+import * as MdIcons from 'react-icons/md'
 
 const EditToDoItemStyle = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ const EditToDoItemStyle = styled.div`
   vertical-align: middle;
   input {
     position: relative;
-    bottom: 6.5px;
+    bottom: 10.8px;
     border: none;
     flex-basis: 85%;
     font-size: 15px;
@@ -35,31 +35,26 @@ const EditToDoItemStyle = styled.div`
       flex-basis: 70%;
     }
   }
-`;
+`
 
-const EditToDoItem = ({
-  toDo: { id, text, completed },
-  showEdit,
-  updateToDoText,
-}) => {
-  const [inputText, setInputText] = useState("");
-  const inputRef = useRef();
+const EditToDoItem = ({toDo: {id, text}, showEdit, updateToDoText}) => {
+  const [inputText, setInputText] = useState('')
+  const inputRef = useRef()
 
-  useEffect(() => inputRef.current.focus());
+  useEffect(() => inputRef.current.focus(), [])
 
   const handleSave = () => {
     const toDo = {
       id,
       text: inputText,
-      completed,
-    };
-    updateToDoText(toDo);
-    showEdit();
-  };
+    }
+    updateToDoText(toDo)
+    showEdit()
+  }
 
-  const handleChange = (e) => {
-    setInputText(e.target.value);
-  };
+  const handleChange = ({target: {value}}) => {
+    setInputText(value)
+  }
 
   return (
     <EditToDoItemStyle>
@@ -79,7 +74,7 @@ const EditToDoItem = ({
         </button>
       </div>
     </EditToDoItemStyle>
-  );
-};
+  )
+}
 
-export default EditToDoItem;
+export default EditToDoItem

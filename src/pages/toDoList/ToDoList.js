@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import styled from "styled-components";
-import ToDoFilter from "./ToDoFilter";
-import Progressbar from "./Progressbar";
-import ToDoItemList from "./ToDoItemList";
-import ToDoCreate from "./ToDoCreate";
+import {useState, useEffect} from 'react'
+import styled from 'styled-components'
+import ToDoCreate from './ToDoCreate'
+import ToDoFilter from './ToDoFilter'
+import ProgressBar from './ProgressBar'
+import ToDoItemList from './ToDoItemList'
 
 const ToDoListStyle = styled.div`
   width: 90%;
@@ -18,82 +18,80 @@ const ToDoListStyle = styled.div`
     text-align: right;
     margin-top: 10px;
   }
-`;
+`
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState(
-    () => JSON.parse(localStorage.getItem("toDos")) || []
-  );
-  const [filterToDos, setFilterToDos] = useState(toDos);
-  const [filterState, setFilterState] = useState("all");
+    () => JSON.parse(localStorage.getItem('toDos')) || [],
+  )
+  const [filterState, setFilterState] = useState('all')
 
   useEffect(() => {
-    localStorage.setItem("toDos", JSON.stringify(toDos));
-    if (filterState === "all") filterAll();
-    if (filterState === "active") filterActive();
-    if (filterState === "completed") filterCompleted();
-  }, [toDos]);
+    updateCache(toDos)
+  }, [toDos])
 
-  const filterAll = () => {
-    setFilterToDos(toDos);
-    setFilterState("all");
-  };
+  const updateCache = updatedToDos => {
+    localStorage.setItem('toDos', JSON.stringify(updatedToDos))
+  }
 
-  const filterActive = () => {
-    setFilterToDos(toDos.filter((toDo) => toDo.completed === false));
-    setFilterState("active");
-  };
+  const createFilterButtonClickHandler = filterState => () =>
+    setFilterState(filterState)
 
-  const remainingToDos = toDos.filter((toDo) => toDo.completed === true);
-  const filterCompleted = () => {
-    setFilterToDos(remainingToDos);
-    setFilterState("completed");
-  };
+  const getFilteredToDos = filterState => {
+    if (filterState === 'all') return toDos
+    if (filterState === 'active')
+      return toDos.filter(({completed}) => !completed)
+    if (filterState === 'completed')
+      return toDos.filter(({completed}) => completed)
+  }
 
-  const addToDo = (toDo) => setToDos([...toDos, toDo]);
+  const addToDo = newToDo => setToDos([...toDos, newToDo])
 
-  const updateToDoCheckbox = (updateToDo) => {
-    const updateToDoList = toDos.map((toDo) =>
-      toDo.id === updateToDo.id
-        ? { ...toDo, completed: updateToDo.completed }
-        : toDo
-    );
-    setToDos(updateToDoList);
-  };
+  const updateToDoChecked = ({id, completed}) => {
+    const updatedToDos = toDos.map(toDo =>
+      toDo.id === id ? {...toDo, completed} : toDo,
+    )
+    setToDos(updatedToDos)
+  }
 
-  const updateToDoText = (updateToDo) => {
-    const updateToDoList = toDos.map((toDo) =>
-      toDo.id === updateToDo.id ? { ...toDo, text: updateToDo.text } : toDo
-    );
-    setToDos(updateToDoList);
-  };
+  const updateToDoText = ({id, text}) => {
+    const updatedToDos = toDos.map(toDo =>
+      toDo.id === id ? {...toDo, text} : toDo,
+    )
+    setToDos(updatedToDos)
+  }
 
-  const deleteToDo = (id) => setToDos(toDos.filter((toDo) => toDo.id !== id));
+  const deleteToDo = targetId => {
+    const updatedToDos = toDos.filter(({id}) => id !== targetId)
+    setToDos(updatedToDos)
+  }
 
-  const filledPercentage = (remainingToDos.length / toDos.length) * 100;
+  const remainingToDosLength = toDos.filter(({completed}) => !completed).length
+  const toDosLength = toDos.length
 
   return (
     <ToDoListStyle>
       <div className="toDoListMain">
         <ToDoCreate toDos={toDos} addToDo={addToDo} />
         <ToDoFilter
-          onClickAll={filterAll}
-          onClickActive={filterActive}
-          onClickCompleted={filterCompleted}
+          createFilterButtonClickHandler={createFilterButtonClickHandler}
         />
-        <Progressbar filledPercentage={filledPercentage} />
+        <ProgressBar
+          remainingToDosLength={remainingToDosLength}
+          toDosLength={toDosLength}
+        />
         <div className="remainTasks">
-          {remainingToDos.length} out of {toDos.length} completed
+          {remainingToDosLength} out of {toDosLength} completed
         </div>
         <ToDoItemList
-          toDos={filterToDos}
-          updateToDoCheckbox={updateToDoCheckbox}
+          toDos={getFilteredToDos(filterState)}
+          updateToDoChecked={updateToDoChecked}
           updateToDoText={updateToDoText}
           deleteToDo={deleteToDo}
         />
       </div>
     </ToDoListStyle>
-  );
-};
+  )
+}
 
-export default ToDoList;
+export default ToDoList

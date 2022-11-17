@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const ToDoFilterStyle = styled.div`
   margin-bottom: 30px;
@@ -27,16 +27,16 @@ const ToDoFilterStyle = styled.div`
       box-shadow: 0 0 5px 0 #015fcc;
     }
   }
-`;
+`
 
-const ToDoFilter = ({ onClickAll, onClickActive, onClickCompleted }) => {
-  return (
-    <ToDoFilterStyle>
-      <button onClick={onClickAll}>● all</button>
-      <button onClick={onClickActive}>● active</button>
-      <button onClick={onClickCompleted}>● completed</button>
-    </ToDoFilterStyle>
-  );
-};
+const ToDoFilter = ({createFilterButtonClickHandler}) => (
+  <ToDoFilterStyle>
+    <button onClick={createFilterButtonClickHandler('all')}>● all</button>
+    <button onClick={createFilterButtonClickHandler('active')}>● active</button>
+    <button onClick={createFilterButtonClickHandler('completed')}>
+      ● completed
+    </button>
+  </ToDoFilterStyle>
+)
 
-export default ToDoFilter;
+export default ToDoFilter

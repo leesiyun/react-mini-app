@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import * as MdIcons from "react-icons/md";
+import styled from 'styled-components'
+import * as MdIcons from 'react-icons/md'
 
 const ToDoItemStyle = styled.div`
   display: flex;
@@ -29,11 +29,10 @@ const ToDoItemStyle = styled.div`
       flex-basis: 70%;
     }
   }
-`;
+`
 
-const ToDoItem = ({ toDo: { id, text, completed }, showEdit, deleteToDo }) => {
-  const handleDelete = () => deleteToDo(id);
-
+const ToDoItem = ({id, text, completed, showEdit, deleteToDo}) => {
+  const handleDelete = () => deleteToDo(id)
   return (
     <ToDoItemStyle>
       <label>{text}</label>
@@ -48,7 +47,7 @@ const ToDoItem = ({ toDo: { id, text, completed }, showEdit, deleteToDo }) => {
         </button>
       </div>
     </ToDoItemStyle>
-  );
-};
+  )
+}
 
-export default ToDoItem;
+export default ToDoItem

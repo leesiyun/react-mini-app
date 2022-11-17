@@ -1,15 +1,18 @@
-import { useState } from "react";
-import styled from "styled-components";
-import * as MdIcons from "react-icons/md";
-import EditToDoItem from "./EditToDoItem";
-import ToDoItem from "./ToDoItem";
+import {useState} from 'react'
+import styled from 'styled-components'
+import * as MdIcons from 'react-icons/md'
+import EditToDoItem from './EditToDoItem'
+import ToDoItem from './ToDoItem'
 
 const ToDoItemStyle = styled.li`
-  text-decoration: ${({ checked }) => (checked ? "line-through" : null)};
-  color: ${({ checked }) => (checked ? "#a2a2a2" : "#2c2c2c")};
+  text-decoration: ${({checked}) => (checked ? 'line-through' : null)};
+  color: ${({checked}) => (checked ? '#a2a2a2' : '#2c2c2c')};
   display: flex;
   position: relative;
-  padding-bottom: 10px;
+
+  label {
+    height: 55px;
+  }
   &:hover {
     button {
       visibility: visible;
@@ -24,7 +27,7 @@ const ToDoItemStyle = styled.li`
     color: #f6ab00;
   }
 
-  [type="checkbox"] {
+  [type='checkbox'] {
     width: 35px;
     height: 35px;
     background-color: white;
@@ -32,57 +35,65 @@ const ToDoItemStyle = styled.li`
     border: 2px solid #dddddd;
     appearance: none;
     outline: none;
-    margin-right: 20px;
     cursor: pointer;
+    margin-right: 20px;
+    @media (max-width: 768px) {
+      margin-right: 16px;
+    }
 
     &:checked {
       border: 2px solid #f6ab00;
       margin-right: 0;
     }
   }
-`;
+`
 
 const ToDoItemTemplate = ({
-  toDo,
-  updateToDoCheckbox,
+  toDo: {id, text, completed},
+  updateToDoChecked,
   updateToDoText,
   deleteToDo,
 }) => {
-  const [isEditing, setEditing] = useState(false);
+  const [isEditing, setEditing] = useState(false)
 
-  const handleChecked = (e) => {
+  const handleChecked = e => {
     const updatedToDo = {
-      id: toDo.id,
-      text: toDo.text,
+      id,
       completed: e.target.checked,
-    };
-    updateToDoCheckbox(updatedToDo);
-  };
+    }
+    updateToDoChecked(updatedToDo)
+  }
 
-  const showEdit = () => setEditing((current) => !current);
+  const showEdit = () => setEditing(current => !current)
 
   return (
-    <ToDoItemStyle checked={toDo.completed}>
+    <ToDoItemStyle checked={completed}>
       <label>
         <input
-          id={toDo.id}
+          id={id}
           type="checkbox"
-          checked={toDo.completed}
+          checked={completed}
           onChange={handleChecked}
         />
-        {toDo.completed && <MdIcons.MdDone className="checkIcon" />}
+        {completed && <MdIcons.MdDone className="checkIcon" />}
       </label>
       {isEditing ? (
         <EditToDoItem
-          toDo={toDo}
+          toDo={(id, text, completed)}
           showEdit={showEdit}
           updateToDoText={updateToDoText}
         />
       ) : (
-        <ToDoItem toDo={toDo} showEdit={showEdit} deleteToDo={deleteToDo} />
+        <ToDoItem
+          id={id}
+          text={text} /*  */
+          completed={completed}
+          showEdit={showEdit}
+          deleteToDo={deleteToDo}
+        />
       )}
     </ToDoItemStyle>
-  );
-};
+  )
+}
 
-export default ToDoItemTemplate;
+export default ToDoItemTemplate
