@@ -86,7 +86,7 @@ const ToDoItemTemplate = ({
       ) : (
         <ToDoItem
           id={id}
-          text={text} /*  */
+          text={text}
           completed={completed}
           showEdit={showEdit}
           deleteToDo={deleteToDo}
