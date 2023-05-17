@@ -52,7 +52,7 @@ export default Pagination
 const PaginationStyle = styled.div`
   width: 100%;
   justify-content: flex-end;
-  margin-top: 10px;
+  margin: 15px 0 50px 0;
   display: inline-flex;
   button {
     width: 36px;

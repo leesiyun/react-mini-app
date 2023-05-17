@@ -26,11 +26,11 @@ const PaginationApp = () => {
 export default PaginationApp
 
 const PaginationAppStyle = styled.div`
+  position: relative;
+  top: 45px;
   height: 100%;
-  margin-top: 100px;
   color: #2c2c2c;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  }
 `
