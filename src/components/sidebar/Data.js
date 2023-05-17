@@ -4,6 +4,7 @@ import * as FaIcons from 'react-icons/fa'
 import * as MdIcons from 'react-icons/md'
 import * as RiIcons from 'react-icons/ri'
 import * as GiIcons from 'react-icons/gi'
+import * as TiIcons from 'react-icons/ti'
 
 export const Data = [
   {
@@ -67,6 +68,11 @@ export const Data = [
   {
     title: 'Weather',
     path: '/weather',
-    icon: <MdIcons.MdLocalMovies />,
+    icon: <TiIcons.TiWeatherPartlySunny />,
+  },
+  {
+    title: 'Pagination',
+    path: '/pagination',
+    icon: <MdIcons.MdInsertPageBreak />,
   },
 ]

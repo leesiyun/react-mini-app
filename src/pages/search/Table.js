@@ -1,14 +1,16 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-const Table = ({ data }) => (
+const Table = ({data}) => (
   <TableStyle>
-    <tbody>
+    <thead>
       <tr>
         <th>Name</th>
         <th>Surname</th>
         <th>Email</th>
       </tr>
-      {data.map((item) => (
+    </thead>
+    <tbody>
+      {data.map(item => (
         <tr key={item.id}>
           <td>{item.first_name}</td>
           <td>{item.last_name}</td>
@@ -17,9 +19,9 @@ const Table = ({ data }) => (
       ))}
     </tbody>
   </TableStyle>
-);
+)
 
-export default Table;
+export default Table
 
 const TableStyle = styled.table`
   margin-top: 60px;
@@ -73,17 +75,17 @@ const TableStyle = styled.table`
       }
 
       &:nth-of-type(1):before {
-        content: "Name";
+        content: 'Name';
       }
       &:nth-of-type(2):before {
-        content: "Surname";
+        content: 'Surname';
       }
       &:nth-of-type(3):before {
-        content: "Email";
+        content: 'Email';
       }
       &:nth-child(3n) {
         border-bottom: 1px solid #dddddd;
       }
     }
   }
-`;
+`

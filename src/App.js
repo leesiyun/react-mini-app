@@ -14,6 +14,7 @@ import MovieHome from './pages/movie/MovieHome'
 import MovieDetail from './pages/movie/MovieDetail'
 import Search from './pages/search/Search'
 import Weather from './pages/Weather'
+import Pagination from './pages/Pagination'
 
 import Sidebar from './components/sidebar/Sidebar'
 import BarIcon from './components/BarIcon'
@@ -60,6 +61,7 @@ const App = () => {
             <Route path="/movie/:id" element={<MovieDetail />} />
             <Route path="/search" element={<Search />} />
             <Route path="/weather" element={<Weather />} />
+            <Route path="/pagination" element={<Pagination />} />
           </Routes>
         </Main>
       </Container>
