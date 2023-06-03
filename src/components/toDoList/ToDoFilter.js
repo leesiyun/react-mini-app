@@ -1,5 +1,26 @@
 import styled from 'styled-components'
 
+const ToDoFilter = ({filterState, setFilterState}) => {
+  const changeFilterState = filterState => () => setFilterState(filterState)
+  const states = ['all', 'active', 'completed']
+
+  return (
+    <ToDoFilterStyle>
+      {states.map((state, index) => (
+        <button
+          key={index}
+          onClick={changeFilterState(state)}
+          className={filterState === state ? 'active' : ''}
+        >
+          ● {state}
+        </button>
+      ))}
+    </ToDoFilterStyle>
+  )
+}
+
+export default ToDoFilter
+
 const ToDoFilterStyle = styled.div`
   margin-bottom: 30px;
   button {
@@ -23,20 +44,8 @@ const ToDoFilterStyle = styled.div`
       background-color: #daedda;
       color: #1d3829;
     }
-    &:focus {
-      box-shadow: 0 0 5px 0 #015fcc;
-    }
+  }
+  .active {
+    box-shadow: 0 0 5px 0 #015fcc;
   }
 `
-
-const ToDoFilter = ({createFilterButtonClickHandler}) => (
-  <ToDoFilterStyle>
-    <button onClick={createFilterButtonClickHandler('all')}>● all</button>
-    <button onClick={createFilterButtonClickHandler('active')}>● active</button>
-    <button onClick={createFilterButtonClickHandler('completed')}>
-      ● completed
-    </button>
-  </ToDoFilterStyle>
-)
-
-export default ToDoFilter

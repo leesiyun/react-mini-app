@@ -1,8 +1,27 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import * as FaIcons from "react-icons/fa";
+import styled from 'styled-components'
+import {Link} from 'react-router-dom'
+import * as FaIcons from 'react-icons/fa'
 
-import Menu from "./Menu";
+import Menu from './Menu'
+
+const Sidebar = ({sidebar, showSidebar, isMobile}) => (
+  <SidebarStyle sidebar={sidebar}>
+    <div className="sidebarWrap">
+      <Link to="/" className="homeIcon" onClick={isMobile && showSidebar}>
+        <FaIcons.FaReact />
+        <div>Siyun Mini App</div>
+      </Link>
+      {!isMobile && (
+        <div onClick={showSidebar}>
+          <FaIcons.FaAngleDoubleLeft className="closeIcon" />
+        </div>
+      )}
+      <Menu showSidebar={showSidebar} isMobile={isMobile} />
+    </div>
+  </SidebarStyle>
+)
+
+export default Sidebar
 
 const SidebarStyle = styled.nav`
   background: #15171c;
@@ -11,7 +30,7 @@ const SidebarStyle = styled.nav`
   justify-content: center;
   position: fixed;
   top: 0;
-  left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
+  left: ${({sidebar}) => (sidebar ? '0' : '-100%')};
   transition: 150ms;
   z-index: 1001;
 
@@ -41,23 +60,4 @@ const SidebarStyle = styled.nav`
     margin: 0 2rem 0 1rem;
     top: 25px;
   }
-`;
-
-const Sidebar = ({ sidebar, showSidebar, isMobile }) => (
-  <SidebarStyle sidebar={sidebar}>
-    <div className="sidebarWrap">
-      <Link to="/" className="homeIcon" onClick={isMobile && showSidebar}>
-        <FaIcons.FaReact />
-        <div>Siyun Mini App</div>
-      </Link>
-      {!isMobile && (
-        <div onClick={showSidebar}>
-          <FaIcons.FaAngleDoubleLeft className="closeIcon" />
-        </div>
-      )}
-      <Menu showSidebar={showSidebar} isMobile={isMobile} />
-    </div>
-  </SidebarStyle>
-);
-
-export default Sidebar;
+`

@@ -4,7 +4,6 @@ import * as FaIcons from 'react-icons/fa'
 import * as MdIcons from 'react-icons/md'
 import * as RiIcons from 'react-icons/ri'
 import * as GiIcons from 'react-icons/gi'
-import * as TiIcons from 'react-icons/ti'
 
 export const Data = [
   {
@@ -27,9 +26,23 @@ export const Data = [
     ],
   },
   {
-    title: 'Search',
-    path: '/search',
-    icon: <FaIcons.FaSearch />,
+    title: 'Data',
+    path: '#',
+    icon: <FaIcons.FaDatabase />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+    subNav: [
+      {
+        title: 'Search',
+        path: '/search',
+        icon: <FaIcons.FaSearch />,
+      },
+      {
+        title: 'Pagination',
+        path: '/pagination',
+        icon: <MdIcons.MdInsertPageBreak />,
+      },
+    ],
   },
   // {
   //   title: "Unit Converter",
@@ -65,14 +78,9 @@ export const Data = [
     path: '/movie',
     icon: <MdIcons.MdLocalMovies />,
   },
-  {
-    title: 'Weather',
-    path: '/weather',
-    icon: <TiIcons.TiWeatherPartlySunny />,
-  },
-  {
-    title: 'Pagination',
-    path: '/pagination',
-    icon: <MdIcons.MdInsertPageBreak />,
-  },
+  // {
+  //   title: 'Weather',
+  //   path: '/weather',
+  //   icon: <TiIcons.TiWeatherPartlySunny />,
+  // },
 ]

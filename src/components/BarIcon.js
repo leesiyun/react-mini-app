@@ -1,6 +1,16 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import * as GoIcons from "react-icons/go";
+import styled from 'styled-components'
+import {Link} from 'react-router-dom'
+import * as GoIcons from 'react-icons/go'
+
+const BarIcon = ({showSidebar}) => (
+  <NavStyle>
+    <Link to="#" className="navLink" onClick={showSidebar}>
+      <GoIcons.GoThreeBars className="icon" />
+    </Link>
+  </NavStyle>
+)
+
+export default BarIcon
 
 const NavStyle = styled.div`
   top: 0;
@@ -16,14 +26,4 @@ const NavStyle = styled.div`
     justify-content: flex-start;
     align-items: center;
   }
-`;
-
-const BarIcon = ({ showSidebar }) => (
-  <NavStyle>
-    <Link to="#" className="navLink" onClick={showSidebar}>
-      <GoIcons.GoThreeBars className="icon" />
-    </Link>
-  </NavStyle>
-);
-
-export default BarIcon;
+`

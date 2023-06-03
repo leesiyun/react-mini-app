@@ -1,19 +1,18 @@
-import { useState } from "react";
-import { Users } from "./users";
-import Table from "./Table";
-import styled from "styled-components";
-import * as FaIcons from "react-icons/fa";
+import {useState} from 'react'
+import {Table, Users} from '../components/search'
+import styled from 'styled-components'
+import * as FaIcons from 'react-icons/fa'
 
 const Search = () => {
-  const [query, setQuery] = useState("");
-  const keys = ["first_name", "last_name", "email"];
+  const [query, setQuery] = useState('')
+  const keys = ['first_name', 'last_name', 'email']
 
-  const search = (data) =>
-    data.filter((item) =>
-      keys.some((key) => item[key].toLowerCase().includes(query))
-    );
+  const search = data =>
+    data.filter(item =>
+      keys.some(key => item[key].toLowerCase().includes(query)),
+    )
 
-  const searchQuery = (e) => setQuery(e.target.value.toLowerCase());
+  const searchQuery = e => setQuery(e.target.value.toLowerCase())
 
   return (
     <SearchStyle className="Search">
@@ -23,10 +22,10 @@ const Search = () => {
       </div>
       <Table data={search(Users)} />
     </SearchStyle>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search
 
 const SearchStyle = styled.div`
   height: 100%;
@@ -71,4 +70,4 @@ const SearchStyle = styled.div`
       padding: 20px 20px 10px 60px;
     }
   }
-`;
+`

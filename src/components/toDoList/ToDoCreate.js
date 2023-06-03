@@ -3,6 +3,26 @@ import styled from 'styled-components'
 import * as MdIcons from 'react-icons/md'
 import ToDoForm from './ToDoForm'
 
+const ToDoCreate = ({toDos, setToDos}) => {
+  const [open, setOpen] = useState(false)
+
+  const handleToggle = () => setOpen(current => !current)
+
+  return (
+    <ToDoCreateStyle open={open}>
+      <div className="container">
+        <div className="title">To Do List</div>
+        <button className="createButton" onClick={handleToggle}>
+          <MdIcons.MdAdd />
+        </button>
+      </div>
+      {open && <ToDoForm toDos={toDos} setToDos={setToDos} />}
+    </ToDoCreateStyle>
+  )
+}
+
+export default ToDoCreate
+
 const ToDoCreateStyle = styled.div`
   .container {
     display: flex;
@@ -41,23 +61,3 @@ const ToDoCreateStyle = styled.div`
     }
   }
 `
-
-const ToDoCreate = ({toDos, addToDo}) => {
-  const [open, setOpen] = useState(false)
-
-  const handleToggle = () => setOpen(current => !current)
-
-  return (
-    <ToDoCreateStyle open={open}>
-      <div className="container">
-        <div className="title">To Do List</div>
-        <button className="createButton" onClick={handleToggle}>
-          <MdIcons.MdAdd />
-        </button>
-      </div>
-      {open && <ToDoForm toDos={toDos} addToDo={addToDo} />}
-    </ToDoCreateStyle>
-  )
-}
-
-export default ToDoCreate

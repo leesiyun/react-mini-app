@@ -1,6 +1,27 @@
 import styled from 'styled-components'
 import * as MdIcons from 'react-icons/md'
 
+const ToDoItem = ({id, text, completed, showEdit, deleteToDo}) => {
+  const handleDelete = () => deleteToDo(id)
+  return (
+    <ToDoItemStyle>
+      <label>{text}</label>
+      <div className="buttons">
+        {!completed && (
+          <button onClick={showEdit}>
+            <MdIcons.MdOutlineModeEdit />
+          </button>
+        )}
+        <button onClick={handleDelete}>
+          <MdIcons.MdOutlineDeleteForever />
+        </button>
+      </div>
+    </ToDoItemStyle>
+  )
+}
+
+export default ToDoItem
+
 const ToDoItemStyle = styled.div`
   display: flex;
   font-size: 15px;
@@ -30,24 +51,3 @@ const ToDoItemStyle = styled.div`
     }
   }
 `
-
-const ToDoItem = ({id, text, completed, showEdit, deleteToDo}) => {
-  const handleDelete = () => deleteToDo(id)
-  return (
-    <ToDoItemStyle>
-      <label>{text}</label>
-      <div className="buttons">
-        {!completed && (
-          <button onClick={showEdit}>
-            <MdIcons.MdOutlineModeEdit />
-          </button>
-        )}
-        <button onClick={handleDelete}>
-          <MdIcons.MdOutlineDeleteForever />
-        </button>
-      </div>
-    </ToDoItemStyle>
-  )
-}
-
-export default ToDoItem

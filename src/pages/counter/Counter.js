@@ -1,6 +1,22 @@
-import { useState } from "react";
-import styled from "styled-components";
-import * as TbIcons from "react-icons/tb";
+import {useState} from 'react'
+import styled from 'styled-components'
+import * as TbIcons from 'react-icons/tb'
+
+const Counter = () => {
+  const [counter, setCounter] = useState(0)
+  const onClick = () => setCounter(current => current + 1)
+
+  return (
+    <CounterStyle>
+      <h3>Total click: {counter}</h3>
+      <button onClick={onClick}>
+        <TbIcons.TbHandClick />
+      </button>
+    </CounterStyle>
+  )
+}
+
+export default Counter
 
 const CounterStyle = styled.div`
   h3 {
@@ -17,22 +33,4 @@ const CounterStyle = styled.div`
       padding: 16.5px 30px;
     }
   }
-`;
-
-const Counter = () => {
-  const [counter, setCounter] = useState(0);
-  const onClick = () => {
-    setCounter((current) => current + 1);
-  };
-
-  return (
-    <CounterStyle>
-      <h3>Total click: {counter}</h3>
-      <button onClick={onClick}>
-        <TbIcons.TbHandClick />
-      </button>
-    </CounterStyle>
-  );
-};
-
-export default Counter;
+`

@@ -1,5 +1,15 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import {Link} from 'react-router-dom'
+import styled from 'styled-components'
+
+const SubMenu = ({item, showSidebar, isMobile}) =>
+  item.subNav?.map((item, index) => (
+    <SubMenuStyle to={item.path} key={index} onClick={isMobile && showSidebar}>
+      {item.icon}
+      <span>{item.title}</span>
+    </SubMenuStyle>
+  ))
+
+export default SubMenu
 
 const SubMenuStyle = styled(Link)`
   display: flex;
@@ -14,14 +24,4 @@ const SubMenuStyle = styled(Link)`
     cursor: pointer;
     background: #c78b04;
   }
-`;
-
-const SubMenu = ({ item, showSidebar, isMobile }) =>
-  item.subNav?.map((item, index) => (
-    <SubMenuStyle to={item.path} key={index} onClick={isMobile && showSidebar}>
-      {item.icon}
-      <span>{item.title}</span>
-    </SubMenuStyle>
-  ));
-
-export default SubMenu;
+`

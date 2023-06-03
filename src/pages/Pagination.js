@@ -1,8 +1,7 @@
 import {useState} from 'react'
 import {getData} from '../services/pagination'
-import {Users} from './search/users'
 import {isMobile} from 'react-device-detect'
-import Table from './search/Table'
+import {Table, Users} from '../components/search'
 import Pagination from '../components/Pagination'
 import styled from 'styled-components'
 
