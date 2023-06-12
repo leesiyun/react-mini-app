@@ -38,6 +38,11 @@ export const Data = [
         icon: <FaIcons.FaSearch />,
       },
       {
+        title: 'Infinite Scroll',
+        path: '/infinite-scroll',
+        icon: <FaIcons.FaInfinity />,
+      },
+      {
         title: 'Pagination',
         path: '/pagination',
         icon: <MdIcons.MdInsertPageBreak />,
