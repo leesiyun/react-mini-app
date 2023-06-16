@@ -15,6 +15,7 @@ import MovieDetail from './pages/movie/MovieDetail'
 import Search from './pages/Search'
 import Weather from './pages/Weather'
 import Pagination from './pages/Pagination'
+import Pokemon from './pages/Pokemon'
 
 import Sidebar from './components/sidebar/Sidebar'
 import BarIcon from './components/BarIcon'
@@ -23,7 +24,6 @@ const Container = styled.div``
 
 const Main = styled.div`
   display: flex;
-  height: 90vh;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -62,6 +62,7 @@ const App = () => {
             <Route path="/search" element={<Search />} />
             <Route path="/weather" element={<Weather />} />
             <Route path="/pagination" element={<Pagination />} />
+            <Route path="/pokemon" element={<Pokemon />} />
           </Routes>
         </Main>
       </Container>

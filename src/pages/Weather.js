@@ -38,8 +38,6 @@ const Weather = () => {
     getFiveDayWeather()
   }, [location])
 
-  console.log(FiveDayDate)
-
   const getCityName = e => setInputText(e.target.value)
   const handleClick = () => setLocation(inputText)
 
