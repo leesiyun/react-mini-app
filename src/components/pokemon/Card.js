@@ -29,6 +29,7 @@ const Card = ({data}) => {
       ) : (
         <CardStyle>
           <img src={pokemonData.sprites.front_default} alt="pokemon img" />
+          <div>NO.{pokemonData.id}</div>
           <div>{data.name}</div>
         </CardStyle>
       )}
@@ -38,4 +39,8 @@ const Card = ({data}) => {
 
 export default memo(Card)
 
-const CardStyle = styled.div``
+const CardStyle = styled.div`
+  width: 100px;
+  height: 200px;
+  border: 1px solid #dddd;
+`
